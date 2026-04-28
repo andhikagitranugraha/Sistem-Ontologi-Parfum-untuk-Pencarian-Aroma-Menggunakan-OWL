@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ontologi Parfum</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>Ontologi Parfum</h1>
+    <p class="subtitle">Eksplorasi parfum berdasarkan notes dan kategori</p>
+
+    <!-- Filter kategori -->
+    <div class="filter-row">
+      <span class="filter-label">Kategori:</span>
+      <button class="filter-btn on"       onclick="setFilter('all', this)">Semua</button>
+      <button class="filter-btn"          onclick="setFilter('fresh', this)">Fresh</button>
+      <button class="filter-btn"          onclick="setFilter('woody', this)">Woody</button>
+      <button class="filter-btn"          onclick="setFilter('sweet', this)">Sweet</button>
+      <button class="filter-btn"          onclick="setFilter('oriental', this)">Oriental</button>
+      <button class="filter-btn"          onclick="setFilter('citrus', this)">Citrus</button>
+      <button class="filter-btn"          onclick="setFilter('fougere', this)">Fougère</button>
+      <button class="filter-btn"          onclick="setFilter('floral', this)">Floral</button>
+    </div>
+
+    <!-- Search -->
+    <div class="search-bar">
+      <input
+        type="text"
+        id="search"
+        placeholder="Cari parfum atau note..."
+        oninput="renderCards()"
+      />
+    </div>
+
+    <!-- Grid kartu parfum -->
+    <div id="parfum-grid" class="parfum-grid"></div>
+
+    <!-- Panel detail (muncul setelah klik kartu) -->
+    <div id="detail" style="display: none;"></div>
+
+    <!-- Legend -->
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-dot" style="background: #FAC775;"></div>
+        Top notes
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background: #5DCAA5;"></div>
+        Middle notes
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background: #AFA9EC;"></div>
+        Base notes
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
